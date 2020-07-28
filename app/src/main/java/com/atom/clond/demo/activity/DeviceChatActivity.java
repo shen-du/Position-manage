@@ -73,7 +73,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
     private LinearLayout llFun2;
     private TextView tvTitle;
     private RecyclerView rv;
-    private Button mBtnSend;
+    private Button mBtnSend,mBtnClean;
     private Handler mMainHandler;
 
     private int pageNo = 1;
@@ -198,13 +198,22 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
             }
         });
 
-        findViewById(R.id.btnClean).setOnClickListener(new View.OnClickListener() {
+        mBtnClean=findViewById(R.id.btnClean);
+        mBtnClean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 trip_information.setText("");
                 ToastUtils.showShort("删除成功");
             }
         });
+//        if(mDeviceBean.getShow_id().equals(1000)) {
+//            mBtnClean.setVisibility(View.INVISIBLE);
+//            trip_information.setVisibility(View.INVISIBLE);
+//        }
+//        if(mDeviceBean.getShow_id().equals(1002)) {
+//            mBtnClean.setVisibility(View.VISIBLE);
+//            trip_information.setVisibility(View.VISIBLE);
+//        }
         mMainHandler = new Handler(Looper.getMainLooper());
 
         connectDevice();

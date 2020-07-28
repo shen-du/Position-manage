@@ -49,7 +49,8 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 v.setEnabled(false);
-                token = etToken.getText().toString();
+//                token = etToken.getText().toString();
+                token = getString(R.string.Token);
                 if (TextUtils.isEmpty(token)) {
                     ToastUtils.showShort("token不能为空");
                     v.setEnabled(true);

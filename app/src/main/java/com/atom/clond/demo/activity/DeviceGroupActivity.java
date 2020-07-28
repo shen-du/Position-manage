@@ -69,7 +69,7 @@ public class DeviceGroupActivity extends AppCompatActivity {
 
     private void initData() {
         String title = getIntent().getStringExtra(ActivityKey.TITLE);
-        ((TextView) findViewById(R.id.tvHeader)).setText(title + "：设备分组列表");
+        ((TextView) findViewById(R.id.tvHeader)).setText("设备分组列表");
 
         HttpRequest.getDeviceGroupList(GlobalValue.orgId, new HttpCallback<List<DeviceGroupBean>>() {
             @Override

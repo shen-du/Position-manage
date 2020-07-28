@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:hint="请输入token"
+        android:hint="已填入token，直接按登陆即可"
         android:textColor="@color/text"
         android:textSize="@dimen/text_m" />
 

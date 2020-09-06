@@ -234,7 +234,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
      */
     private void getHistoryRecord() {
         mDeviceBean = getIntent().getParcelableExtra(ActivityKey.DEVICE_BEAN);
-
+        System.out.println(ActivityKey.DEVICE_BEAN);
         HttpRequest.getChatHisData(pageNo, GlobalValue.orgId, mDeviceBean.getNumber(), new HttpCallback<MessageListBean>() {
             @Override
             public void onSuccess(MessageListBean data) {
@@ -324,7 +324,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
                         if (heartRate != 0) heartRate_last = heartRate;
                         p="状态:上线"+"\n"+"心率:"+String.valueOf(heartRate)+"\n"+"血压:"+String.valueOf(bloodPressureLow)+"~"+String.valueOf(bloodPressureHigh);
                     }
-                    if(mDeviceBean.getShow_id().equals(1000)) {
+                    if(mDeviceBean.getShow_id().equals("1000")) {
                         longitude=Double.valueOf(str.substring(str.indexOf("longitude:")+"longitude:".length(),str.indexOf(",latitude")));
                         latitude=Double.valueOf(str.substring(str.indexOf("latitude:")+"latitude:".length(),str.indexOf(",heartRate")));
                         heartRate= Integer.valueOf(str.substring(str.indexOf("heartRate:")+"heartRate:".length(),str.indexOf(",bloodOxygen")));

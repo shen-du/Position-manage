@@ -217,8 +217,18 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
         mMainHandler = new Handler(Looper.getMainLooper());
 
         connectDevice();
-    }
 
+    }
+    /**
+     * 弹出提示
+     */
+    private void showAlert(boolean isSuccess, String actionName) {
+        if (isSuccess) {
+            ToastUtils.showShort(actionName + "成功");
+        } else {
+            ToastUtils.showShort(actionName + "失败");
+        }
+    }
     /**
      * 获取聊天记录
      */
@@ -255,6 +265,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
      * 发送数据
      */
     private void sendMessage(String msg) {
+        showAlert(wsManager.subDevice(), "订阅");
         if (!TextUtils.isEmpty(msg)) {
             byte[] dataByte;
            // etMsg.setText("");
@@ -272,9 +283,9 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
             messageBean.setDataByte(dataByte);
             if (wsManager.sendMsg(dataByte)) {
 
-                ToastUtils.showShort("发送成功");
+                //ToastUtils.showShort("发送成功");
             } else {
-                ToastUtils.showShort("发送失败");
+            //    ToastUtils.showShort("发送失败");
             }
         }
     }
@@ -287,7 +298,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
             @Override
             public void run() {
 
-                ToastUtils.showShort(errMsg);
+                //ToastUtils.showShort(errMsg);
             }
         });
     }
@@ -300,7 +311,7 @@ public class DeviceChatActivity extends AppCompatActivity implements WsEventList
                 String str=data.getNormalData();
                 System.out.println(str);
                 if(str.length()>10) {
-                    if(mDeviceBean.getShow_id().equals(1002)) {
+                    if(mDeviceBean.getShow_id().equals("1002")) {
                         longitude = Double.valueOf(str.substring(str.indexOf("longitude:") + "longitude:".length(), str.indexOf(",latitude")));
                         if (longitude != 0) longitude_last = longitude;
                         latitude = Double.valueOf(str.substring(str.indexOf("latitude:") + "latitude:".length(), str.indexOf(",blood_pressure_H")));

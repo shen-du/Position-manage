@@ -14,5 +14,8 @@
         completions."
     </string>
     <string name="Token">99c45cd56163eabbbd79a1c73e7e5f8a</string>
+    <string name="登陆提醒">已填入token，直接按登陆即可</string>
+    <string name="login">登录</string>
+    <string name="todo">TODO</string>
 
 </resources>

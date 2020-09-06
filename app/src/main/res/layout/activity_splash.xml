@@ -11,23 +11,26 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:src="@mipmap/map" />
+        android:src="@mipmap/map"
+        android:contentDescription="@string/todo" />
 
     <EditText
         android:id="@+id/etToken"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:hint="已填入token，直接按登陆即可"
+        android:hint="@string/登陆提醒"
         android:textColor="@color/text"
-        android:textSize="@dimen/text_m" />
+        android:textSize="@dimen/text_m"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="登录"
+        android:text="@string/login"
         android:textColor="@color/text"
         android:textSize="@dimen/text_m" />
 

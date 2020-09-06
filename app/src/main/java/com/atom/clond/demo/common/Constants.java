@@ -19,7 +19,7 @@ public class Constants {
     /**
      * 原子云平台的token，替换为自己的token
      */
-    public static String HTTP_TOKEN = "1523e79d746e7ba9699e596b7a1562ea";
+    public static String HTTP_TOKEN = "99c45cd56163eabbbd79a1c73e7e5f8a";
 
     /**
      * 是否调试状态

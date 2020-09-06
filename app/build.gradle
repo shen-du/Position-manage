@@ -27,7 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     defaultConfig {
-        applicationId "com.atom.clond.demo"
+        applicationId "com.atom.clond.companion"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 11
